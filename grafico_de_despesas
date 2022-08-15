@@ -53,3 +53,26 @@ class Grafico:
 
     plt.legend()
     plt.show()
+
+
+class Despesas:
+    def __init__(self, dicionario, cor, nome):
+        self.dicionario = dicionario
+        self.cor=cor
+        self.nome = nome
+        
+maio = Despesas({1:13.99,5:10.76,7:9.00,17:101.09,20:0.50,29:300.00},'skyblue','maio')
+junho = Despesas({1:100.00,3:150.98,5:500.00,7:20.21,15:15.87,20:17.00,27:0.88},'red','junho')
+julho = Despesas({1:140.00,3:1.00,5:300.90,7:12.23,10:30.00,15:21.50,20:270.00,27:200.99},'olive','julho')
+lista_despesas = [maio,junho,julho]
+
+grafico = Grafico(lista_despesas)
+
+id_mes = 0 #mês de maio
+grafico.regressao_linear(id_mes)
+
+id_mes = 1 #mês de junho
+grafico.regressao_linear(id_mes)
+
+id_mes = 2 #mês de julho
+grafico.regressao_linear(id_mes)
